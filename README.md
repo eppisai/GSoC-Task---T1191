@@ -11,7 +11,7 @@
  
  ```
 def image_to_array(im):
-    im = rgba_to_4bit(im)
+    im = rgba_to_2bit(im)
     array = []
     im = np.array(im)
     im = im.reshape(im.size//4,4)
@@ -22,8 +22,16 @@ def image_to_array(im):
     return array
   ```
   
+  Above Function,
+  1. converts the image, to its quantized version with 4 colors, 
+  2. then converts image a numpy array, which is then reshaped to a 2d numpy array of width 4 and height (im.size/4) 
+  3. We reshaped the array into size of 4 since, we byte in final output would need to 4 pixel, (2 bit per pixel)
+  4. For each pixel row (size is 4) in image array, we convert it to byte, shifting each bit in 2 muliple, and then adding them (i.e OR operation at bit level)
+  5. not we set the 1st bit of each row of image as Least significant bit, because we need to start drawing from 1st bit. (last bit MSB - most significant bit)
+  6. made a new array with bytes of pixel bits. 
+  
   ```
-  def rgba_to_4bit(image):
+  def rgba_to_2bit(image):
     white_image = Image.new('RGBA', image.size, (255, 255, 255))
     image = Image.alpha_composite(white_image, image)
     image = image.convert('L')
