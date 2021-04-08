@@ -31,6 +31,7 @@ def image_to_array(im):
   6. made a new array with bytes of pixel bits. 
   
   <br>
+  
   ```
   def rgba_to_2bit(image):
     white_image = Image.new('RGBA', image.size, (255, 255, 255))
