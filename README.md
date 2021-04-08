@@ -45,7 +45,7 @@ def image_to_array(im):
   
   
   Above rgba_to_2bit Function,
-  1. Mixes background color (white to be get correct rgb) with pixel color in the ration of their alpha value(transparency), called alpha compositing.
+  1. Mixes background color (white to be get correct rgb) with pixel color in the ratio of their alpha value(transparency), called alpha compositing.
   2. converts the image to greyscale and then in quantizes, its colors to 4.
   3. We are converting image to grey scale to have a gradual decreasing shades of black to white, we can extract colors manually also.
 
@@ -110,7 +110,7 @@ uint16_t Painter::ApplyTransparency(float transparency, uint16_t color, uint16_t
 
 ```
 
-Above function, Taking background color in Transparency amount, and Pixel color in (1 - transparency) amount in the new color
+Above function,Applies Transparency by taking background color in Transparency amount, and Pixel color in (1 - transparency) amount in the new color
 
 <br>
 
