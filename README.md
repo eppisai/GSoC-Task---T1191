@@ -7,6 +7,8 @@
 <li>Added <a href = "https://github.com/eppisai/AXIOM-Remote/blob/21df13431b2eac1c2bfe0043ebd69c182f2fb3bc/Firmware/UI/Painter/Painter.cpp#L658">Transparency feature</a> in Drawing 2 bit Icon</li>
 <li><a href = "https://github.com/eppisai/AXIOM-Remote/blob/21df13431b2eac1c2bfe0043ebd69c182f2fb3bc/FirmwareTest/PainterTest.cpp#L217">Unit Test</a> to verify Proper Implementation</li>
 
+<a href = "https://github.com/eppisai/IMAGE_TO_ARRAY">Repository Image to Array Conversion Script </a>
+
 <h2> How Image to array conversion in Python Script is happening? </h2>
  
  ```
