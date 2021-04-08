@@ -7,7 +7,6 @@
 <li>Added <a href = "https://github.com/eppisai/AXIOM-Remote/blob/21df13431b2eac1c2bfe0043ebd69c182f2fb3bc/Firmware/UI/Painter/Painter.cpp#L658">Transparency feature</a> in Drawing 2 bit Icon</li>
 <li><a href = "https://github.com/eppisai/AXIOM-Remote/blob/21df13431b2eac1c2bfe0043ebd69c182f2fb3bc/FirmwareTest/PainterTest.cpp#L217">Unit Test</a> to verify Proper Implementation</li>
 
-<a href = "https://github.com/eppisai/IMAGE_TO_ARRAY">Repository Image to Array Conversion Script </a>
 
 <h2> How Image to array conversion in Python Script is happening? </h2>
  
@@ -86,6 +85,31 @@ void Painter::DrawIcon2Bit(const Icon2bit* image, uint16_t x, uint16_t y, float 
 
 ```
 
+Above is a farily straight forward function, which processes each byte and extracts 2 bits and matches each bit to its corresponding color, and then apply Transparency to it.
+
+<h2> Transparency function for 2 bit icon </h2>
+
+```
+uint16_t Painter::ApplyTransparency(float transparency, uint16_t color, uint16_t background)
+{   
+    uint16_t pixelColor = 0;
+
+    //Red color channel with transparency amount of Background color
+    pixelColor +=  uint16_t( color*(1 - transparency) + background*transparency ) & 0xF800;
+
+    //Green color channel with transparency amount of Background color
+    pixelColor += uint16_t( (color & 0x07FF )*(1 - transparency) + (background & 0x07FF )*transparency ) & 0x07E0;
+
+    //Green color channel with transparency amount of Background color
+    pixelColor += (color & 0x001F)*(1 - transparency) + (background & 0x001F)*transparency;
+
+    return pixelColor;
+}
+
+```
+
+Above function, Taking background color in Transparency amount, and Pixel color in (1 - transparency) amount in the new color
+
 <h2> Extended Icon2bit.h </h2>
 
 ```
@@ -113,3 +137,5 @@ struct Icon2bit
 #endif // ICON2BIT_H
 
 ```
+
+Above structure, extends Icon.h with color storage of 2 bit icon and, and enum for user readability
