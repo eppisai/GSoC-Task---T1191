@@ -47,3 +47,67 @@ def image_to_array(im):
   1. Mixes background color (white to be get correct rgb) with pixel color in the ration of their alpha value(transparency), called alpha compositing.
   2. converts the image to greyscale and then in quantizes, its colors to 4.
   3. We are converting image to grey scale to have a gradual decreasing shades of black to white, we can extract colors manually also.
+
+
+
+<h2> Draw2bitIconMethod </h2>
+
+```
+void Painter::DrawIcon2Bit(const Icon2bit* image, uint16_t x, uint16_t y, float transparency = 0)
+{
+        int b = 0;
+        for (uint16_t yIndex = 0; yIndex < image->Height; yIndex++)
+        {
+            uint16_t yPos = y + yIndex;
+
+            for (uint16_t xIndex = 0; xIndex < image->Width;)
+            {
+                uint8_t data = image->Data[b];
+                for (int i = 0; i < 8; i+=2)
+                {
+                    uint8_t pixel = ((1 << 2) - 1) & (data >> i);
+
+                    if(pixel)
+                    {
+                        uint16_t pixelcolor = image->IndexedColors[pixel];
+                        uint16_t backcolor = _framebuffer[y * _framebufferWidth + x];
+                        uint16_t finalcolor = ApplyTransparency(transparency, pixelcolor, backcolor);
+                        DrawPixel(x + xIndex, yPos, finalcolor);
+                    }
+
+                    xIndex++;
+                }
+                b++;
+            }
+        }  
+}
+
+```
+
+<h2> Extended Icon2bit.h </h2>
+
+```
+#ifndef ICON2BIT_H
+#define ICON2BIT_H
+
+#include <inttypes.h>
+
+#include "../../Utils.h"
+enum class ImageDataFormat : uint8_t
+{
+	Monochrome = 0,
+	Indexed2Bit = 1
+};
+
+struct Icon2bit
+{
+    const uint16_t Width;
+    const uint16_t Height;
+    ImageDataFormat Format;
+    uint16_t IndexedColors[4];
+    const uint8_t* Data;
+};
+
+#endif // ICON2BIT_H
+
+```
