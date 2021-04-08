@@ -49,7 +49,7 @@ def image_to_array(im):
   2. converts the image to greyscale and then in quantizes, its colors to 4.
   3. We are converting image to grey scale to have a gradual decreasing shades of black to white, we can extract colors manually also.
 
-
+<br>
 
 <h2> Draw2bitIconMethod </h2>
 
@@ -87,6 +87,8 @@ void Painter::DrawIcon2Bit(const Icon2bit* image, uint16_t x, uint16_t y, float 
 
 Above is a farily straight forward function, which processes each byte and extracts 2 bits and matches each bit to its corresponding color, and then apply Transparency to it.
 
+<br>
+
 <h2> Transparency function for 2 bit icon </h2>
 
 ```
@@ -109,6 +111,8 @@ uint16_t Painter::ApplyTransparency(float transparency, uint16_t color, uint16_t
 ```
 
 Above function, Taking background color in Transparency amount, and Pixel color in (1 - transparency) amount in the new color
+
+<br>
 
 <h2> Extended Icon2bit.h </h2>
 
@@ -139,3 +143,7 @@ struct Icon2bit
 ```
 
 Above structure, extends Icon.h with color storage of 2 bit icon and, and enum for user readability
+
+<br>
+
+![Screenshot_20210319_225604](https://user-images.githubusercontent.com/54789531/111819598-8a6adb80-8906-11eb-943a-e6ae4a769350.png)
