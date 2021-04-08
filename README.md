@@ -25,10 +25,10 @@ def image_to_array(im):
   
   Above image_to_array Function,
   1. converts the image, to its quantized version with 4 colors, 
-  2. then converts image a numpy array, which is then reshaped to a 2d numpy array of width 4 and height (im.size/4) 
-  3. We reshaped the array into size of 4 since, we byte in final output would need to 4 pixel, (2 bit per pixel)
-  4. For each pixel row (size is 4) in image array, we convert it to byte, shifting each bit in 2 muliple, and then adding them (i.e OR operation at bit level)
-  5. not we set the 1st bit of each row of image as Least significant bit, because we need to start drawing from 1st bit. (last bit MSB - most significant bit)
+  2. then converts image to a numpy array, which is then reshaped to a 2d numpy array of width 4 and height (im.size/4) 
+  3. We reshaped the array into size of 4 since, each byte in final output would have 4 pixel, (2 bit per pixel)
+  4. For each pixel row (size is 4) in image array, we convert it to byte, shifting each bit in muliples of 2(4 values), and then adding them (i.e OR operation at bit level)
+  5. We set the 1st bit of each row of image as Least significant bit, because we need to start drawing from 1st bit. (last bit is MSB - most significant bit)
   6. made a new array with bytes of pixel bits. 
   
   <br>
