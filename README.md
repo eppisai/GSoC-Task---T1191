@@ -9,7 +9,7 @@
 
 
 <h2> How Image to array conversion in Python Script is happening? </h2>
- <li><a href = "https://github.com/eppisai/IMAGE_TO_ARRAY"> Repository for Image to Array Conversion</a></li>
+ <li><a href = "https://github.com/eppisai/IMAGE_TO_ARRAY"> Repository for Image to Array Conversion Python Script</a></li>
  
  ```
 def image_to_array(im):
