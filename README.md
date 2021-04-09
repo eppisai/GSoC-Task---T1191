@@ -2,9 +2,9 @@
 
 <h2> Subtask Completed in 2 Bit Image Drawing </h2>
 <li>A <a href = "https://github.com/eppisai/IMAGE_TO_ARRAY/blob/master/script.py">Python Script</a> to Convert Image to Array</li>
-<li><a href = "https://github.com/eppisai/AXIOM-Remote/blob/266c0fe3ba9ce842994d3a084f479fd68e840751/Firmware/UI/Painter/Painter.cpp#L658">DrawIcon2bit method</a> in Painter to draw 2 Bit icons in firmware</li>
+<li><a href = "">DrawIcon2bit method</a> in Painter to draw 2 Bit icons in firmware</li>
 <li><a href = "https://github.com/eppisai/AXIOM-Remote/blob/21df13431b2eac1c2bfe0043ebd69c182f2fb3bc/Firmware/UI/Widgets/Icon2bit.h#L13">Extended Icon.h</a>, to better fit 2 bit icon data, and its colors</li>
-<li>Added <a href = "https://github.com/eppisai/AXIOM-Remote/blob/21df13431b2eac1c2bfe0043ebd69c182f2fb3bc/Firmware/UI/Painter/Painter.cpp#L658">Transparency feature</a> in Drawing 2 bit Icon</li>
+<li>Added <a href = "https://github.com/eppisai/AXIOM-Remote/blob/266c0fe3ba9ce842994d3a084f479fd68e840751/Firmware/UI/Painter/Painter.cpp#L658">Transparency feature</a> in Drawing 2 bit Icon</li>
 <li><a href = "https://github.com/eppisai/AXIOM-Remote/blob/9fc9b071cef2b9017f5bca6b693e4e3ab17d8c38/FirmwareTest/PainterTest.cpp#L217">Unit Test</a> to verify Proper Implementation</li>
 
 
