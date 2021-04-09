@@ -86,7 +86,7 @@ void Painter::DrawIcon2Bit(const Icon2bit* image, uint16_t x, uint16_t y, float 
 
 ```
 
-Above is a farily straight forward function, which processes each byte and extracts 2 bits and matches each bit to its corresponding color, and then apply Transparency to it.
+Above is a farily straight forward function, which processes each byte and extracts bits from bytes in pairs of two and matches each pair to its corresponding color, and then apply Transparency to it.
 
 <br>
 
