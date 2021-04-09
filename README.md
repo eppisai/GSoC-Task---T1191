@@ -111,7 +111,7 @@ uint16_t Painter::ApplyTransparency(float transparency, uint16_t color, uint16_t
 
 ```
 
-Above function,Applies Transparency by taking background color in Transparency amount, and Pixel color in (1 - transparency) amount in the new color
+Above function,Applies Transparency by taking background color in Transparency amount, and Pixel color in (1 - transparency) amount in the new color. <br>Note : Value of Transparency is between 0 and 1
 
 <br>
 
