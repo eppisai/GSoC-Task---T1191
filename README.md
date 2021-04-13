@@ -155,7 +155,7 @@ Above structure, extends Icon.h with color storage of 2 bit icon and, and enum f
 <br>
 
 ## Output
-* 1st image is 4 bit icon with 0 percent transparency and 2nd image is 4 bit icon with 60 percent transparency
+* 1st image is 2 bit icon with 0 percent transparency and 2nd image is 2 bit icon with 60 percent transparency
 
   <img align = "center" src="https://user-images.githubusercontent.com/54789531/114575495-d9065e00-9c97-11eb-9e43-0212168c6fd5.png" width="350" title="with zero transparency"><br>
 
