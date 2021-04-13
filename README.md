@@ -53,7 +53,7 @@ def image_to_array(im):
 <br>
 
  <li><a href = "https://github.com/eppisai/AXIOM-Remote/tree/2bitimageTask"> Repository of AXIOM Remote, with 2 bit image Task</a></li>
-<h2> Draw2bitIconMethod </h2>
+<h2> DrawIcon2bit Method </h2>
 
 ```
 void Painter::DrawIcon2Bit(const Icon2bit* image, uint16_t x, uint16_t y, float transparency = 0)
