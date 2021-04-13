@@ -148,4 +148,11 @@ Above structure, extends Icon.h with color storage of 2 bit icon and, and enum f
 
 <br>
 
+<h2 align = "center">References Used </h2>
+<ui>
+	<li>For color extraction for 16 bit RGB565 pixel, I am using RGB565 color masks, as descrided <a href = "https://docs.microsoft.com/en-us/windows/win32/directshow/working-with-16-bit-rgb">here</a> </li>
+	<li>For RGB to RGBA conversion and for transparency in remote (alpha compositing), I am using <a href = "https://stackoverflow.com/questions/2049230/convert-rgba-color-to-rgb">this</a> simple formula, described in 1st answer</li>
+</ui>
+<br>
+ <h2 align = "center>Screenshot of the output </h2>
 ![Screenshot_20210319_225604](https://user-images.githubusercontent.com/54789531/111819598-8a6adb80-8906-11eb-943a-e6ae4a769350.png)
