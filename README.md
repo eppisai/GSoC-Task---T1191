@@ -2,9 +2,9 @@
 
 <h2> Subtask Completed in 2 Bit Image Drawing </h2>
 <li>A <a href = "https://github.com/eppisai/IMAGE_TO_ARRAY/blob/master/script.py">Python Script</a> to Convert Image to Array</li>
-<li><a href = "https://github.com/eppisai/AXIOM-Remote/blob/5f2093f37c44ece81945c423a290cac12ed09ad7/Firmware/UI/Painter/Painter.cpp#L628">DrawIcon2bit method</a> in Painter to draw 2 Bit icons in firmware</li>
+<li><a href = "https://github.com/eppisai/AXIOM-Remote/blob/5506c75e4cac068b5f20bc8ba7200613ca415c2d/Firmware/UI/Painter/Painter.cpp#L628">DrawIcon2bit method</a> in Painter to draw 2 Bit icons in firmware</li>
 <li><a href = "https://github.com/eppisai/AXIOM-Remote/blob/21df13431b2eac1c2bfe0043ebd69c182f2fb3bc/Firmware/UI/Widgets/Icon2bit.h#L13">Extended Icon.h</a>, to better fit 2 bit icon data, and its colors</li>
-<li>Added <a href = "https://github.com/eppisai/AXIOM-Remote/blob/5f2093f37c44ece81945c423a290cac12ed09ad7/Firmware/UI/Painter/Painter.cpp#L658">Transparency feature</a> in Drawing 2 bit Icon</li>
+<li>Added <a href = "https://github.com/eppisai/AXIOM-Remote/blob/5506c75e4cac068b5f20bc8ba7200613ca415c2d/Firmware/UI/Painter/Painter.cpp#L658">Transparency feature</a> in Drawing 2 bit Icon</li>
 <li><a href = "https://github.com/eppisai/AXIOM-Remote/blob/08281a742191944015bdff802168d39def9ca15a/FirmwareTest/PainterTest.cpp#L217">Unit Test</a> to verify Proper Implementation</li>
 
 
@@ -99,16 +99,16 @@ uint16_t Painter::ApplyTransparency(float transparency, uint16_t color, uint16_t
     uint16_t pixelColor = 0;
 
     //Red color channel with transparency amount of Background color
-    pixelColor +=  uint16_t( color*(1 - transparency) + background*transparency ) & 0xF800;
+    pixelColor +=  uint16_t( (color & 0xF800)*(1 - transparency) + ( background & 0xF800)*transparency ) & 0xF800;
 
     //Green color channel with transparency amount of Background color
-    pixelColor += uint16_t( (color & 0x07E0 )*(1 - transparency) + (background & 0x07E0 )*transparency ) & 0x07E0;
+    pixelColor += uint16_t( (color & 0x07E0)*(1 - transparency) + (background & 0x07E0)*transparency ) & 0x07E0;
 
-    //Blue color channel with transparency amount of Background color
-    pixelColor += (color & 0x001F)*(1 - transparency) + (background & 0x001F)*transparency;
+    //blue color channel with transparency amount of Background color
+    pixelColor += uint16_t( (color & 0x001F)*(1 - transparency) + (background & 0x001F)*transparency ) & 0x001F;
 
     return pixelColor;
-}
+} 
 
 ```
 
