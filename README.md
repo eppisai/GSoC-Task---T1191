@@ -28,7 +28,7 @@ def image_to_array(im):
   1. converts the image, to its quantized version with 4 colors, 
   2. then converts image to a numpy array, which is then reshaped to a 2d numpy array of width 4 and height (im.size/4) 
   3. We reshaped the array into size of 4 since, each byte in final output would have 4 pixel, (2 bit per pixel)
-  4. For each pixel row (size is 4) in image array, we convert it to byte, shifting each bit in muliples of 2(4 values), and then adding them (i.e OR operation at bit level)
+  4. For each pixel row (size is 4) in image array, we convert it to byte, shifting each bit in muliples of 2(4 values), and then adding them
   5. We set the 1st bit of each row of image as Least significant bit, because we need to start drawing from 1st bit. (last bit is MSB - most significant bit)
   6. made a new array with bytes of pixel bits. 
   
@@ -112,7 +112,7 @@ uint16_t Painter::ApplyTransparency(float transparency, uint16_t color, uint16_t
 
 ```
 
-Above function,Applies Transparency by taking background color in Transparency amount, and Pixel color in (1 - transparency) amount in the new color. <br>Note : Value of Transparency is between 0 and 1 (float, not double)
+Above function,applies transparency by taking background color in Transparency amount, and Pixel color in (1 - transparency) amount in the new color. <br>Note : Value of Transparency is between 0 and 1 (float, not double).I am using RGB565 color chanel masks, complete article is in references.
 
 <br>
 
@@ -155,7 +155,7 @@ Above structure, extends Icon.h with color storage of 2 bit icon and, and enum f
 <br>
 
 ## Output
-	
+* 1st image is 4 bit icon with 0 percent transparency and 2nd image is 4 bit icon with 60 percent transparency
 
   <img align = "center" src="https://user-images.githubusercontent.com/54789531/114575495-d9065e00-9c97-11eb-9e43-0212168c6fd5.png" width="350" title="with zero transparency"><br>
 
